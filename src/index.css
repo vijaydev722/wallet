@@ -1,0 +1,195 @@
+/* styles.css (or your global CSS file) */
+
+/* Base styles for all screen sizes */
+:root {
+  --background-color: #f6fbff;
+  --text-color: #333;
+  --primary-color: #007bff;
+  --container-padding: 15px;
+  --container-max-width: 1200px;
+}
+
+[data-theme='dark']{
+  --background-color: #323239;
+  --text-color: #eee;
+  /* --primary-color: #FFD700; */
+  --primary-color: #f6d000;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0; /* Reset default body margin */
+  padding: 0; /* Reset default body padding */
+}
+
+.app-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto; /* Center the container */
+  padding: var(--container-padding);
+}
+
+input{
+  padding: 4px 8px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+button {
+  padding: 4px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Responsive adjustments using media queries */
+
+/* Small screens (up to 576px - typical for most phones) */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 8px 15px;
+  }
+
+  .app-container {
+    padding: 10px;
+  }
+
+  .sidebar{
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    backdrop-filter: brightness(2.5);
+  }
+}
+
+.config-md{
+  display: block;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+}
+
+/* Medium screens (577px to 768px - typical for tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .sidebar{
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    backdrop-filter: brightness(2.5);
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .app-container {
+    padding: 20px;
+  }
+}
+
+/* Large screens (769px to 992px - typical for larger tablets and smaller desktops) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .app-container {
+    padding: 30px;
+  }
+  .sidebar{
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    backdrop-filter: brightness(2.5);
+  }
+}
+
+/* Extra-large screens (993px and above - typical for desktops) */
+@media (min-width: 993px) {
+  h1 {
+    font-size: 2.8em;
+  }
+
+  .config-md{
+    display: none;
+  }
+  
+  .sidebar{
+    height:'100vh';
+    display: block;
+  }
+
+  .app-container {
+    padding: 40px;
+  }
+}
+
+/* Example of theme-aware component styling that might need responsiveness */
+.theme-aware-box {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 20px;
+  border: 1px solid #ccc; /* You might want a theme-aware border too */
+  border-color: var(--text-color); /* Example of a theme-aware border color */
+  margin-bottom: 1em;
+}
+
+@media (max-width: 576px) {
+  .theme-aware-box {
+    padding: 15px;
+    margin-bottom: 0.8em;
+  }
+}
+.row-flex { display: flex; flex-direction: row; }
+.items-center {  align-items: center; }
+.items-start {  align-items: start; }
+.items-end {  align-items: end; }
+.justify-center {  justify-content: center; }
+.justify-start {  justify-content: start; }
+.justify-end {  justify-content: end; }
+.justify-between {  justify-content: space-between; }
+.justify-around {  justify-content: space-around; }
+.justify-evenly {  justify-content: space-evenly; }
+
+.primary-border-top{ border-top: 1px solid var(--primary-color);}
+.primary-border-right{ border-right: 1px solid var(--primary-color);}
+.primary-border-left{ border-left: 1px solid var(--primary-color);}
+.primary-border-bottom{ border-bottom: 1px solid var(--primary-color);}
+.primary-bg{ background-color: var(--primary-color);}
